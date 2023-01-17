@@ -1,0 +1,12 @@
+/* PrimeNG carousel custom styling */
+.p-carousel-next,
+.p-carousel-prev {
+  border: solid gray 1px !important;
+  width: 1.5rem !important;
+  height: 1.5rem !important;
+}
+.p-carousel-next-icon,
+.p-carousel-prev-icon {
+  font-size: 10px !important;
+  font-weight: bold;
+}

@@ -1,0 +1,47 @@
+<div
+  class="global-container flex h-top-toolbar items-center justify-between border-y border-y-gray-200 bg-white px-20"
+>
+  <div
+    class="logo-container group flex h-full cursor-pointer items-center text-site-red"
+  >
+    <!-- put in here the svg element with the airbnb logo -->
+    <svg class="fill-current" width="102" height="32">
+      <path [attr.d]="logo_1" />
+      <path [attr.d]="logo_2" />
+    </svg>
+  </div>
+
+  <div
+    class="region-date-filter flex cursor-pointer divide-x-2 rounded-3xl border p-2 shadow-sm transition-shadow duration-200 hover:shadow-md"
+  >
+    <button class="px-4 text-sm">Anywhere</button>
+    <button class="px-4 text-sm">Any week</button>
+    <div class="flex">
+      <button class="px-4 text-sm">Add guests</button>
+      <button
+        mat-fab
+        class="h-7 w-7 rounded-full bg-site-red p-px text-sm text-white"
+      >
+        <mat-icon class="scale-75">search</mat-icon>
+      </button>
+    </div>
+  </div>
+
+  <div class="flex items-stretch justify-between space-x-3">
+    <button class="rounded-full p-2 text-sm hover:bg-gray-100">
+      Airbnb your home
+    </button>
+    <button class="rounded-full p-2 hover:bg-gray-100">
+      <mat-icon class="scale-75 text-gray-900">language</mat-icon>
+    </button>
+    <button
+      class="relative space-x-1.5 rounded-3xl border border-gray-200 p-1.5 transition-shadow duration-200 hover:shadow-md"
+    >
+      <mat-icon class="scale-75 text-gray-500">menu</mat-icon
+      ><mat-icon class="scale-125 text-gray-500">account_circle</mat-icon>
+      <span
+        class="absolute top-0 right-0 block h-3 w-3 rounded-full border-2 border-solid border-white bg-site-red"
+      ></span>
+    </button>
+  </div>
+</div>

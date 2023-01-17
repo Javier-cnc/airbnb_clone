@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styling for PrimeNg components */
+@import "utilities/primeNg.css";
+
+/* You can add global styles to this file, and also import other style files */
+html,
+body {
+  height: auto;
+}
+
+body {
+  margin: 0;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto,
+    Helvetica Neue, sans-serif;
+
+  /* ===== Global Variables ===== */
+  --footprint_bar_height: calc(60px);
+  --information_bar_height: 58px;
+  --top_toolbar_height: 80px;
+  --filters_bar_height: 80px;
+
+  /* Color variables */
+  --light_gray_color: #f7f7f7;
+  --red_color: #ff385c;
+
+  /* Font size variables */
+  --medium_font: 15px;
+}
+
+.text-link {
+  margin-left: 10px;
+  text-decoration-line: underline;
+  cursor: pointer;
+  user-select: none;
+}
+
+.mat-icon {
+  vertical-align: middle;
+}

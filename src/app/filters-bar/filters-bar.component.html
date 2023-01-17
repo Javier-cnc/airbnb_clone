@@ -1,0 +1,25 @@
+<div
+  class="flex h-filterbar w-full flex-row items-center justify-center space-x-2 bg-white px-20 py-2 shadow-md"
+>
+  <p-carousel
+    class="overflow-hidden"
+    [value]="products"
+    [showIndicators]="false"
+    [numVisible]="15"
+    [numScroll]="10"
+    [circular]="false"
+    [responsiveOptions]="responsiveOptions"
+  >
+    <ng-template let-filter pTemplate="item">
+      <div class="flex flex-col items-center justify-center">
+        <i class="pi pi-check block"></i>
+        <span class="block">{{ filter.name }}</span>
+      </div>
+    </ng-template>
+  </p-carousel>
+
+  <button class="flex space-x-2 rounded-xl border border-gray-200 p-3">
+    <i class="pi pi-sliders-h"></i>
+    <span class="text-xs">Filters</span>
+  </button>
+</div>
