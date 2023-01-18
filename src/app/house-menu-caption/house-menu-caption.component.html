@@ -1,0 +1,30 @@
+<div class="relative mt-3 select-none">
+  <!-- Carousel element -->
+  <div
+    class="flex h-64 items-center justify-center overflow-hidden rounded-xl bg-green-700 text-center align-middle text-white"
+  >
+    <img
+      class="h-full w-full object-cover"
+      src="../../assets/Casas/Cabo San Lucas, México/04007f4e-10ee-408b-8985-c42e656f1e24.webp"
+    />
+  </div>
+
+  <span class="block text-ellipsis text-sm font-semibold text-gray-900"
+    >Punta Cana, México</span
+  >
+  <span class="block text-ellipsis text-sm text-gray-500">a 1200 km</span>
+  <span class="block text-ellipsis text-sm text-gray-500"
+    >1 al 13 de junio</span
+  >
+  <span class="block text-ellipsis text-sm font-semibold text-gray-900"
+    >$1,234 por noche</span
+  >
+  <svg
+    (click)="toggleState()"
+    [class.selected]="state"
+    [attr.data-state]="state"
+    class="absolute top-4 right-4 h-8 w-8 scale-75 cursor-pointer fill-black stroke-white stroke-2 opacity-50 hover:opacity-70 data-[state=true]:fill-red-600 data-[state=true]:opacity-100"
+  >
+    <path [attr.d]="heart_icon_path"></path>
+  </svg>
+</div>

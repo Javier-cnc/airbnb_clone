@@ -19,6 +19,7 @@ import { TopToolbarComponent } from './top-toolbar/top-toolbar.component';
 import { InformationBarComponent } from './information-bar/information-bar.component';
 import { FiltersBarComponent } from './filters-bar/filters-bar.component';
 import { FootPrintBarComponent } from './foot-print-bar/foot-print-bar.component';
+import { HouseMenuCaptionComponent } from './house-menu-caption/house-menu-caption.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { FootPrintBarComponent } from './foot-print-bar/foot-print-bar.component
     InformationBarComponent,
     FiltersBarComponent,
     FootPrintBarComponent,
+    HouseMenuCaptionComponent,
   ],
   imports: [
     BrowserModule,

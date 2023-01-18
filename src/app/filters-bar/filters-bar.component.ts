@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PrimeIcons, MenuItem } from 'primeng/api';
 import { ProductService } from '../product.service';
+import { RepositoryService } from '../repository.service';
 
 export interface Product {
   id?: string;
@@ -21,49 +22,37 @@ export interface Product {
   styleUrls: ['./filters-bar.component.css'],
 })
 export class FiltersBarComponent {
-  public products: any[] = [];
-  public filters: MenuItem[] = [];
+  public categories: { icon: string; label: string }[] = [];
 
   public responsiveOptions;
 
-  constructor(private productService: ProductService) {
+  constructor(private repo: RepositoryService) {
     this.responsiveOptions = [
       {
         breakpoint: '1024px',
-        numVisible: 3,
-        numScroll: 1,
+        numVisible: 10,
+        numScroll: 6,
       },
       {
         breakpoint: '768px',
-        numVisible: 2,
-        numScroll: 1,
+        numVisible: 6,
+        numScroll: 4,
       },
       {
         breakpoint: '560px',
-        numVisible: 1,
-        numScroll: 1,
+        numVisible: 4,
+        numScroll: 2,
       },
     ];
-    // create the collection of elements
-    for (let i = 0; i < 100; i++) {
-      this.products.push({ name: i });
-    }
 
-    this.filters = [
-      {
-        label: 'File',
-        items: [
-          { label: 'New', icon: PrimeIcons.PLUS },
-          { label: 'Open', icon: PrimeIcons.DOWNLOAD },
-        ],
+    // load categories collection
+    this.repo.getCategories().subscribe({
+      next: (res) => {
+        this.categories = res;
       },
-      {
-        label: 'Edit',
-        items: [
-          { label: 'Undo', icon: PrimeIcons.REFRESH },
-          { label: 'Redo', icon: PrimeIcons.REPLAY },
-        ],
+      error: (message) => {
+        // TODO: Output something to the console...
       },
-    ];
+    });
   }
 }

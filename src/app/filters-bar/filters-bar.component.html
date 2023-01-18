@@ -1,19 +1,23 @@
 <div
-  class="flex h-filterbar w-full flex-row items-center justify-center space-x-2 bg-white px-20 py-2 shadow-md"
+  class="flex h-filterbar w-full flex-row items-center justify-center space-x-2 bg-white px-20 shadow-md"
 >
   <p-carousel
-    class="overflow-hidden"
-    [value]="products"
+    class="mt-2 overflow-hidden"
+    [value]="categories"
     [showIndicators]="false"
     [numVisible]="15"
-    [numScroll]="10"
+    [numScroll]="5"
     [circular]="false"
     [responsiveOptions]="responsiveOptions"
   >
-    <ng-template let-filter pTemplate="item">
-      <div class="flex flex-col items-center justify-center">
-        <i class="pi pi-check block"></i>
-        <span class="block">{{ filter.name }}</span>
+    <ng-template let-category pTemplate="item">
+      <div
+        class="mx-2 flex cursor-pointer select-none flex-col items-center justify-center opacity-70 transition-opacity duration-200 hover:opacity-100"
+      >
+        <img class="h-5 w-5" src="assets/categories/{{ category.icon }}" />
+        <span class="whitespace-nowrap text-center text-xs">{{
+          category.label
+        }}</span>
       </div>
     </ng-template>
   </p-carousel>

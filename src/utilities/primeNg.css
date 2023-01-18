@@ -4,6 +4,7 @@
   border: solid gray 1px !important;
   width: 1.5rem !important;
   height: 1.5rem !important;
+  font-weight: bold;
 }
 .p-carousel-next-icon,
 .p-carousel-prev-icon {

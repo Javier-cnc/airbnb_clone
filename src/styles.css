@@ -5,6 +5,11 @@
 /* Custom styling for PrimeNg components */
 @import "utilities/primeNg.css";
 
+@font-face {
+  font-family: "Circular2";
+  src: url("assets/Circular-Std-Font/circular.otf") format("opentype");
+}
+
 /* You can add global styles to this file, and also import other style files */
 html,
 body {
