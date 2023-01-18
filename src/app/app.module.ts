@@ -20,6 +20,7 @@ import { InformationBarComponent } from './information-bar/information-bar.compo
 import { FiltersBarComponent } from './filters-bar/filters-bar.component';
 import { FootPrintBarComponent } from './foot-print-bar/foot-print-bar.component';
 import { HouseMenuCaptionComponent } from './house-menu-caption/house-menu-caption.component';
+import { AwesomeCarouselComponent } from './awesome-carousel/awesome-carousel.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { HouseMenuCaptionComponent } from './house-menu-caption/house-menu-capti
     FiltersBarComponent,
     FootPrintBarComponent,
     HouseMenuCaptionComponent,
+    AwesomeCarouselComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,13 +1,32 @@
-<div class="relative mt-3 select-none">
+<div
+  (mouseenter)="changeButtonsVisibility(true)"
+  (mouseleave)="changeButtonsVisibility(false)"
+  class="relative mt-3 cursor-pointer select-none"
+>
   <!-- Carousel element -->
-  <div
-    class="flex h-64 items-center justify-center overflow-hidden rounded-xl bg-green-700 text-center align-middle text-white"
+  <app-awesome-carousel
+    [values]="[
+      '617ef2b7-1d0d-4562-8508-fb3476b7495a.webp',
+      '617ef2b7-1d0d-4562-8508-fb3476b7495a.webp',
+      '617ef2b7-1d0d-4562-8508-fb3476b7495a.webp',
+      '617ef2b7-1d0d-4562-8508-fb3476b7495a.webp',
+      '617ef2b7-1d0d-4562-8508-fb3476b7495a.webp',
+      '617ef2b7-1d0d-4562-8508-fb3476b7495a.webp',
+      '617ef2b7-1d0d-4562-8508-fb3476b7495a.webp',
+      '617ef2b7-1d0d-4562-8508-fb3476b7495a.webp'
+    ]"
+    [itemsTemplate]="template"
+    [areActionButtonsVisible]="areButtonsVisible"
   >
-    <img
-      class="h-full w-full object-cover"
-      src="../../assets/Casas/Cabo San Lucas, México/04007f4e-10ee-408b-8985-c42e656f1e24.webp"
-    />
-  </div>
+  </app-awesome-carousel>
+  <ng-template let-image #template>
+    <div class="h-56">
+      <img
+        class="h-full w-full object-cover"
+        src="../../assets/Casas/Cabo_San_Lucas_Mexico/{{ image }}"
+      />
+    </div>
+  </ng-template>
 
   <span class="block text-ellipsis text-sm font-semibold text-gray-900"
     >Punta Cana, México</span

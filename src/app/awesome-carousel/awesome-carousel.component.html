@@ -1,0 +1,43 @@
+<div class="global-container group relative">
+  <!-- In here I will put all the children elements -->
+  <div
+    #itemsContainer
+    class="items-container flex flex-row flex-nowrap items-stretch justify-start overflow-hidden scroll-smooth rounded-xl"
+  >
+    <div class="w-full shrink-0" *ngFor="let value of values">
+      <ng-container
+        [ngTemplateOutlet]="template"
+        [ngTemplateOutletContext]="{ $implicit: value }"
+      ></ng-container>
+    </div>
+  </div>
+
+  <!-- Action buttons -->
+  <div
+    class="action-buttons-container absolute top-0 bottom-0 left-0 right-0 flex h-full w-full flex-row items-center justify-between"
+  >
+    <button
+      (click)="moveBack()"
+      [attr.data-visibility]="
+        areActionButtonsVisible && !isCurrentIndexBottom()
+      "
+      class="mx-2 rounded-full bg-white p-1 text-black opacity-0 transition-opacity duration-300 hover:scale-105 data-[visibility=true]:opacity-100"
+    >
+      <mat-icon>keyboard_arrow_left</mat-icon>
+    </button>
+    <button
+      (click)="moveForward()"
+      [attr.data-visibility]="areActionButtonsVisible && !isCurrentIndexTop()"
+      class="mx-2 rounded-full bg-white p-1 text-black opacity-0 transition-opacity duration-300 hover:scale-105 data-[visibility=true]:opacity-100"
+    >
+      <mat-icon>keyboard_arrow_right</mat-icon>
+    </button>
+  </div>
+
+  <!-- Indicator elements -->
+  <div
+    class="indicator-elements-container absolute bottom-2 left-0 right-0 h-5 bg-white text-center opacity-70"
+  >
+    indicator
+  </div>
+</div>
