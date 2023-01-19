@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import House from '../models/house.model';
 
 @Component({
   selector: 'app-house-menu-caption',
@@ -7,7 +8,7 @@ import { Component, Input } from '@angular/core';
 })
 export class HouseMenuCaptionComponent {
   @Input('model')
-  public houseModel: { images: string[] } = { images: [] };
+  public houseModel: House = new House();
 
   public state: boolean = false;
   public heart_icon_path: string =

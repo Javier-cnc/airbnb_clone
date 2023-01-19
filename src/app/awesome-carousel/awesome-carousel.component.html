@@ -44,7 +44,7 @@
     >
       <div
         [attr.data-selected]="i === animatedCurrentIndex"
-        class="h-1.5 w-1.5 shrink-0 grow-0 rounded-full bg-white opacity-50 transition-opacity duration-200 data-[selected=true]:bg-red-700 data-[selected=true]:opacity-100"
+        class="h-1.5 w-1.5 shrink-0 grow-0 rounded-full bg-white opacity-50 transition-opacity duration-200 data-[selected=true]:opacity-100"
         *ngFor="let led of values; index as i"
       ></div>
     </div>

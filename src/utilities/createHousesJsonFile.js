@@ -47,12 +47,16 @@ async function createHousesJsonFile() {
     // create the rating value
     var rating = (Math.random() * 5).toFixed(2);
 
+    // create the area value
+    var area = Math.trunc(Math.random() * 5000);
+
     // add the element to the collection
     houses.push({
       region: imageFolders[i],
       images: images,
       price: price,
       rating: rating,
+      area: area,
     });
   }
 

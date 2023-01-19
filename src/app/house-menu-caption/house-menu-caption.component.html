@@ -19,15 +19,17 @@
     </div>
   </ng-template>
 
-  <span class="block text-ellipsis text-sm font-semibold text-gray-900"
-    >Punta Cana, México</span
+  <span class="block text-ellipsis text-sm font-semibold text-gray-900">
+    {{ houseModel.region }}</span
   >
-  <span class="block text-ellipsis text-sm text-gray-500">a 1200 km</span>
+  <span class="block text-ellipsis text-sm text-gray-500"
+    >{{ houseModel.area }} metros cuadrados</span
+  >
   <span class="block text-ellipsis text-sm text-gray-500"
     >1 al 13 de junio</span
   >
   <span class="block text-ellipsis text-sm font-semibold text-gray-900"
-    >$1,234 por noche</span
+    >{{ houseModel.price | currency : "" : "symbol" }} por noche</span
   >
   <svg
     (click)="toggleState()"
