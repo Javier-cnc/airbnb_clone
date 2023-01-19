@@ -36,8 +36,17 @@
 
   <!-- Indicator elements -->
   <div
-    class="indicator-elements-container absolute bottom-2 left-0 right-0 h-5 bg-white text-center opacity-70"
+    class="indicator-elements-container absolute bottom-2 left-0 right-0 flex h-5 flex-row items-center justify-center space-x-2 text-center"
   >
-    indicator
+    <div
+      #scrolleableIndicator
+      class="container relative flex w-14 flex-row justify-start space-x-1.5 overflow-hidden scroll-smooth"
+    >
+      <div
+        [attr.data-selected]="i === animatedCurrentIndex"
+        class="h-1.5 w-1.5 shrink-0 grow-0 rounded-full bg-white opacity-50 transition-opacity duration-200 data-[selected=true]:opacity-100"
+        *ngFor="let led of values; index as i"
+      ></div>
+    </div>
   </div>
 </div>
