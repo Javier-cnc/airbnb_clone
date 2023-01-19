@@ -5,16 +5,7 @@
 >
   <!-- Carousel element -->
   <app-awesome-carousel
-    [values]="[
-      '617ef2b7-1d0d-4562-8508-fb3476b7495a.webp',
-      '617ef2b7-1d0d-4562-8508-fb3476b7495a.webp',
-      '617ef2b7-1d0d-4562-8508-fb3476b7495a.webp',
-      '617ef2b7-1d0d-4562-8508-fb3476b7495a.webp',
-      '617ef2b7-1d0d-4562-8508-fb3476b7495a.webp',
-      '617ef2b7-1d0d-4562-8508-fb3476b7495a.webp',
-      '617ef2b7-1d0d-4562-8508-fb3476b7495a.webp',
-      '617ef2b7-1d0d-4562-8508-fb3476b7495a.webp'
-    ]"
+    [values]="houseModel.images"
     [itemsTemplate]="template"
     [areActionButtonsVisible]="areButtonsVisible"
   >
@@ -23,7 +14,7 @@
     <div class="h-56">
       <img
         class="h-full w-full object-cover"
-        src="../../assets/Casas/Cabo_San_Lucas_Mexico/{{ image }}"
+        src="../../assets/Casas/{{ image }}"
       />
     </div>
   </ng-template>

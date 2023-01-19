@@ -12,4 +12,8 @@ export class RepositoryService {
     // get request to the local data in the harddrive
     return this.httpClient.get<[any]>('assets/categories.json');
   }
+
+  public getHouses(): Observable<any[]> {
+    return this.httpClient.get<any[]>('assets/houses.json');
+  }
 }

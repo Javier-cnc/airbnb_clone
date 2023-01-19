@@ -5,31 +5,20 @@
  */
 
 const fs = require("fs");
-const { map } = require("rxjs");
+const uti = require("./handyFunctions");
 
 // definition of address
 var readDirectoryAddress = "src/assets/categories";
 var writeFileAddress = "src/assets/categories.json";
 
-// #region Utility Function
-function showConsoleMessageWithColor(type, message) {
-  const colorCollection = new Map();
-
-  colorCollection.set("success", "\x1b[42m%s\x1b[0m");
-  colorCollection.set("error", "\x1b[41m%s\x1b[0m");
-
-  console.log(colorCollection.get(type), message);
-}
-// #endregion
-
 fs.readdir(readDirectoryAddress, (err, files) => {
   if (err) {
-    return showConsoleMessageWithColor("error", "This is my error: " + err);
+    return uti.showConsoleMessageWithColor("error", "This is my error: " + err);
   }
 
   // #region show directory files
   // listing all files using forEach
-  files.forEach((file) => {
+  files.forEach((files) => {
     //console.log(file);
   });
 
@@ -64,7 +53,7 @@ fs.readdir(readDirectoryAddress, (err, files) => {
   // #region save in file system json Object
   fs.writeFile(writeFileAddress, jsonContent, "utf8", function (err) {
     if (err) {
-      showConsoleMessageWithColor(
+      uti.showConsoleMessageWithColor(
         "error",
         "An error occured while writing JSON Object to File."
       );
@@ -74,5 +63,8 @@ fs.readdir(readDirectoryAddress, (err, files) => {
   // #endregion
 
   // show a message with green background color indicating the success of the operation
-  showConsoleMessageWithColor("success", "*****OPERATION SUCCESSFULL******");
+  uti.showConsoleMessageWithColor(
+    "success",
+    "*****OPERATION SUCCESSFULL******"
+  );
 });
