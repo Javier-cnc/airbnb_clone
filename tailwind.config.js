@@ -5,6 +5,7 @@ module.exports = {
       colors: {
         "site-red": "#ff385c",
         "light-gray": "#f7f7f7",
+        "dark-gray": "#222222",
       },
       height: {
         "top-toolbar": "80px",

@@ -24,6 +24,8 @@ export interface Product {
 export class FiltersBarComponent {
   public categories: { icon: string; label: string }[] = [];
 
+  public selectedCategoryLabel: string = 'Islas';
+
   public responsiveOptions;
 
   constructor(private repo: RepositoryService) {

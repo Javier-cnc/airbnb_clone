@@ -1,8 +1,8 @@
 <div
-  class="flex h-filterbar w-full flex-row items-center justify-center space-x-2 bg-white px-20 shadow-md"
+  class="flex h-filterbar w-full flex-row items-stretch justify-center space-x-2 bg-white px-20 shadow-md"
 >
   <p-carousel
-    class="mt-2 overflow-hidden"
+    class="overflow-hidden"
     [value]="categories"
     [showIndicators]="false"
     [numVisible]="15"
@@ -12,12 +12,20 @@
   >
     <ng-template let-category pTemplate="item">
       <div
-        class="mx-2 flex cursor-pointer select-none flex-col items-center justify-center opacity-70 transition-opacity duration-200 hover:opacity-100"
+        (click)="selectedCategoryLabel = category.label"
+        [attr.data-selected]="selectedCategoryLabel === category.label"
+        class="group relative mx-2 flex h-filterbar cursor-pointer select-none flex-col items-stretch justify-center rounded-lg opacity-60 transition-all duration-200 hover:opacity-100 active:bg-gray-50 data-[selected=true]:opacity-100"
       >
-        <img class="h-5 w-5" src="assets/categories/{{ category.icon }}" />
+        <div class="flex flex-row items-start justify-center">
+          <img class="h-5 w-5" src="assets/categories/{{ category.icon }}" />
+        </div>
         <span class="whitespace-nowrap text-center text-xs">{{
           category.label
         }}</span>
+        <div
+          [attr.data-selected]="selectedCategoryLabel === category.label"
+          class="absolute bottom-0 left-0 right-0 h-0.5 bg-black underline opacity-0 group-hover:opacity-20 data-[selected=true]:opacity-100"
+        ></div>
       </div>
     </ng-template>
   </p-carousel>
