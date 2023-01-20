@@ -18,10 +18,16 @@
       />
     </div>
   </ng-template>
-
-  <span class="block text-ellipsis text-sm font-semibold text-gray-900">
-    {{ houseModel.region }}</span
-  >
+  <div class="mt-4 flex flex-row justify-between">
+    <span
+      class="mr-4 block grow overflow-hidden text-ellipsis whitespace-nowrap text-sm font-semibold text-gray-900"
+    >
+      {{ houseModel.region }}</span
+    >
+    <span class="flex w-20 shrink-0 flex-row items-center justify-end text-ss"
+      ><mat-icon class="scale-60">star</mat-icon>{{ houseModel.rating }}</span
+    >
+  </div>
   <span class="block text-ellipsis text-sm text-gray-500"
     >{{ houseModel.area }} metros cuadrados</span
   >

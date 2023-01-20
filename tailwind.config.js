@@ -13,6 +13,19 @@ module.exports = {
         informationBar: "58px",
         "foot-printbar": "47px",
       },
+      fontSize: {
+        ss: [
+          "0.85rem",
+          {
+            lineHeight: "1.15rem",
+            letterSpacing: "-0.008em",
+            fontWeight: "400",
+          },
+        ],
+      },
+      scale: {
+        60: "0.6",
+      },
     },
   },
   plugins: [],
