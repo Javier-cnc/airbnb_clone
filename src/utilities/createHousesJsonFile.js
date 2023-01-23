@@ -58,6 +58,13 @@ async function createHousesJsonFile() {
       rating: rating,
       area: area,
     });
+    houses.push({
+      region: imageFolders[i],
+      images: images,
+      price: price,
+      rating: rating,
+      area: area,
+    });
   }
 
   console.log(houses);

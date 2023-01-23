@@ -77,8 +77,6 @@ export class AwesomeCarouselComponent {
     // perform the scroll operation of the parent element
     containerElement.scrollLeft = offset;
 
-    containerElement.addEventListener();
-
     // #endregion
     // note: the indicator will be scrolled after the smooth scroll operation has finished
     // see handler for scroll event in ngAfterViewInit() method...

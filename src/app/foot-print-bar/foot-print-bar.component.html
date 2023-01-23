@@ -1,63 +1,90 @@
 <div
-  [class.collapsed]="isNavigationBarVisible"
+  [class.collapsed]="!isNavigationBarVisible && isNavigationBarCollapsable"
   class="global-container fixed bottom-0 left-0 right-0 border-y border-y-gray-200 transition-all duration-200"
 >
   <!-- floating button -->
   <div
-    class="floating-button-container absolute bottom-24 left-0 right-0 flex flex-row items-center justify-center"
+    [class.floating-button-collapsed]="
+      isInformationBarVisible && isNavigationBarCollapsable
+    "
+    class="floating-button-container absolute bottom-24 left-0 right-0 flex flex-row items-center justify-center transition-all duration-200"
   >
     <button
-      class="rounded-full bg-dark-gray p-3 text-sm text-white transition-transform duration-200 hover:scale-105 hover:shadow-xl"
+      class="space-x-2 rounded-full bg-dark-gray p-3 text-sm text-white transition-transform duration-200 hover:scale-105 hover:shadow-xl"
     >
-      Ver en el mapa <mat-icon style="color: white">map</mat-icon>
+      <span class="hidden md:inline">Ver en el mapa</span>
+      <span class="inline md:hidden">Mapa</span>
+      <mat-icon style="color: white">map</mat-icon>
     </button>
+  </div>
+
+  <!-- Information bar -->
+  <div
+    [class.information-bar-collapsed]="
+      !isInformationBarVisible && isNavigationBarCollapsable
+    "
+    class="information-barblock h-10 cursor-pointer bg-light-gray py-2 text-center font-medium transition-all duration-200 md:hidden"
+  >
+    <span>Mostrar los precios por adelantado </span>
   </div>
 
   <!-- navigation bar container -->
   <div
-    class="navigation-bar-container flex h-foot-printbar flex-row items-stretch justify-center bg-white text-xs md:hidden"
+    class="navigation-bar-container relative flex h-foot-printbar flex-row items-stretch justify-center border-t border-gray-200 bg-white text-xs md:hidden"
   >
     <div
       class="navigation-buttons-container flex flex-row space-x-11 text-gray-400"
     >
       <div
-        class="navigation-item flex flex-col items-center justify-center space-y-1"
+        (click)="currentNavigationButtonSelected = 'Explorar'"
+        class="navigation-item flex cursor-pointer flex-col items-center justify-center space-y-1"
       >
         <mat-icon
-          [attr.data-select]="true"
-          class="scale-125 data-[select=true]:text-red-600"
+          [attr.data-select]="currentNavigationButtonSelected === 'Explorar'"
+          class="scale-125 data-[select=true]:text-site-red"
           >search</mat-icon
         >
-        <span [attr.data-select]="true" class="data-[select=true]:text-black"
+        <span
+          [attr.data-select]="currentNavigationButtonSelected === 'Explorar'"
+          class="data-[select=true]:text-black"
           >Explorar</span
         >
       </div>
       <div
-        class="navigation-item flex flex-col items-center justify-center space-y-1"
+        (click)="currentNavigationButtonSelected = 'Favoritos'"
+        class="navigation-item flex cursor-pointer flex-col items-center justify-center space-y-1"
       >
         <mat-icon
-          [attr.data-select]="false"
-          class="scale-125 data-[select=true]:text-red-600"
+          [attr.data-select]="currentNavigationButtonSelected === 'Favoritos'"
+          class="scale-125 data-[select=true]:text-site-red"
           >heart_broken</mat-icon
         >
-        <span [attr.data-select]="false" class="data-[select=true]:text-black"
+        <span
+          [attr.data-select]="currentNavigationButtonSelected === 'Favoritos'"
+          class="data-[select=true]:text-black"
           >Favoritos</span
         >
       </div>
       <div
-        class="navigation-item flex flex-col items-center justify-center space-y-1"
+        (click)="currentNavigationButtonSelected = 'Iniciar Sesión'"
+        class="navigation-item flex cursor-pointer flex-col items-center justify-center space-y-1"
       >
         <mat-icon
-          [attr.data-select]="false"
-          class="scale-125 data-[select=true]:text-red-600"
+          [attr.data-select]="
+            currentNavigationButtonSelected === 'Iniciar Sesión'
+          "
+          class="scale-125 data-[select=true]:text-site-red"
           >account_circle</mat-icon
         >
-        <span [attr.data-select]="false" class="data-[select=true]:text-black"
+        <span
+          [attr.data-select]="
+            currentNavigationButtonSelected === 'Iniciar Sesión'
+          "
+          class="data-[select=true]:text-black"
           >Iniciar Sesión</span
         >
       </div>
     </div>
-    "
   </div>
 
   <!-- foot bar container-->
