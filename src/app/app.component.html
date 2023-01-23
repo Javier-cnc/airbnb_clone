@@ -1,21 +1,15 @@
-<app-information-bar></app-information-bar>
+<app-information-bar class="hidden md:block"></app-information-bar>
 
 <div class="sticky-container">
   <app-top-toolbar></app-top-toolbar>
   <app-filters-bar></app-filters-bar>
 </div>
 
-<div class="elements-container grid grid-cols-6 gap-5 px-20 py-6">
+<div
+  class="elements-container grid grid-cols-1 gap-5 px-5 py-6 sm:grid-cols-2 md:grid-cols-3 md:px-10 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 2xl:px-20"
+>
   <app-house-menu-caption [model]="item" *ngFor="let item of houses">
   </app-house-menu-caption>
 </div>
-<div
-  class="floating-button-container fixed bottom-24 left-0 right-0 flex flex-row items-center justify-center"
->
-  <button
-    class="rounded-full bg-dark-gray p-3 text-sm text-white transition-transform duration-200 hover:scale-105 hover:shadow-xl"
-  >
-    Ver en el mapa <mat-icon style="color: white">map</mat-icon>
-  </button>
-</div>
+
 <app-foot-print-bar></app-foot-print-bar>

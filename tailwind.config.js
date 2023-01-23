@@ -11,7 +11,7 @@ module.exports = {
         "top-toolbar": "80px",
         filterbar: "60px",
         informationBar: "58px",
-        "foot-printbar": "47px",
+        "foot-printbar": "60px",
       },
       fontSize: {
         ss: [

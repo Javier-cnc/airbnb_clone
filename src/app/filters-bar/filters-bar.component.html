@@ -1,10 +1,11 @@
 <div
-  class="flex h-filterbar w-full flex-row items-stretch justify-center space-x-2 bg-white px-20 shadow-md"
+  class="flex h-filterbar w-full flex-row items-stretch justify-center space-x-2 bg-white px-0 shadow-md md:px-10 lg:px-20"
 >
   <p-carousel
     class="overflow-hidden"
     [value]="categories"
     [showIndicators]="false"
+    [showNavigators]="false"
     [numVisible]="15"
     [numScroll]="5"
     [circular]="false"
@@ -29,7 +30,7 @@
       </div>
     </ng-template>
   </p-carousel>
-  <div class="flex flex-col justify-center">
+  <div class="hidden flex-col justify-center md:flex">
     <button class="flex space-x-2 rounded-xl border border-gray-200 p-3">
       <i class="pi pi-sliders-h"></i>
       <span class="text-xs">Filters</span>

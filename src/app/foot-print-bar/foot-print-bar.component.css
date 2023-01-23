@@ -1,0 +1,3 @@
+.collapsed {
+  margin-bottom: calc(var(--footprint_bar_height) * -1);
+}

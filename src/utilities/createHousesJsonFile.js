@@ -45,7 +45,7 @@ async function createHousesJsonFile() {
     var price = Math.trunc(Math.random() * 10000);
 
     // create the rating value
-    var rating = (Math.random() * 5).toFixed(2);
+    var rating = (Math.random() + 4).toFixed(2);
 
     // create the area value
     var area = Math.trunc(Math.random() * 5000);

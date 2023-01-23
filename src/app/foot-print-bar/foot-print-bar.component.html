@@ -1,33 +1,98 @@
 <div
-  class="global-container text-ss fixed bottom-0 left-0 right-0 flex h-foot-printbar flex-row justify-between border-y border-y-gray-200 bg-white px-20"
+  [class.collapsed]="isNavigationBarVisible"
+  class="global-container fixed bottom-0 left-0 right-0 border-y border-y-gray-200 transition-all duration-200"
 >
-  <div class="flex flex-row items-center justify-start space-x-1 text-gray-600">
-    <span
-      ><mat-icon class="mb-1 scale-50">copyright</mat-icon>2023 Airbnb, Inc.
-    </span>
-    <span class="mb-2">.</span>
-    <button class="hover:underline">Términos</button>
-    <span class="mb-2">.</span>
-    <button class="hover:underline">Mapa del sitio</button>
-    <span class="mb-2">.</span>.
-    <button class="hover:underline">Privacidad</button>
-    <span class="mb-2">.</span>
-    <button class="hover:underline">Your Privacy Choices</button>
-    <div class="image-container pl-1">
-      <img class="h-4" src="assets/Your privacy choices.PNG" />
+  <!-- floating button -->
+  <div
+    class="floating-button-container absolute bottom-24 left-0 right-0 flex flex-row items-center justify-center"
+  >
+    <button
+      class="rounded-full bg-dark-gray p-3 text-sm text-white transition-transform duration-200 hover:scale-105 hover:shadow-xl"
+    >
+      Ver en el mapa <mat-icon style="color: white">map</mat-icon>
+    </button>
+  </div>
+
+  <!-- navigation bar container -->
+  <div
+    class="navigation-bar-container flex h-foot-printbar flex-row items-stretch justify-center bg-white text-xs md:hidden"
+  >
+    <div
+      class="navigation-buttons-container flex flex-row space-x-11 text-gray-400"
+    >
+      <div
+        class="navigation-item flex flex-col items-center justify-center space-y-1"
+      >
+        <mat-icon
+          [attr.data-select]="true"
+          class="scale-125 data-[select=true]:text-red-600"
+          >search</mat-icon
+        >
+        <span [attr.data-select]="true" class="data-[select=true]:text-black"
+          >Explorar</span
+        >
+      </div>
+      <div
+        class="navigation-item flex flex-col items-center justify-center space-y-1"
+      >
+        <mat-icon
+          [attr.data-select]="false"
+          class="scale-125 data-[select=true]:text-red-600"
+          >heart_broken</mat-icon
+        >
+        <span [attr.data-select]="false" class="data-[select=true]:text-black"
+          >Favoritos</span
+        >
+      </div>
+      <div
+        class="navigation-item flex flex-col items-center justify-center space-y-1"
+      >
+        <mat-icon
+          [attr.data-select]="false"
+          class="scale-125 data-[select=true]:text-red-600"
+          >account_circle</mat-icon
+        >
+        <span [attr.data-select]="false" class="data-[select=true]:text-black"
+          >Iniciar Sesión</span
+        >
+      </div>
+    </div>
+    "
+  </div>
+
+  <!-- foot bar container-->
+  <div
+    class="foot-bar-container hidden h-foot-printbar flex-row justify-between bg-white px-20 text-ss md:visible md:flex"
+  >
+    <div
+      class="flex flex-row flex-wrap items-center justify-start space-x-1 text-gray-600"
+    >
+      <span>&copy; 2023 Airbnb, Inc. </span>
+      <span class="mb-2">.</span>
+      <button class="hover:underline">Términos</button>
+      <span class="mb-2">.</span>
+      <button class="hover:underline">Mapa del sitio</button>
+      <span class="mb-2">.</span>.
+      <button class="hover:underline">Privacidad</button>
+      <span class="mb-2">.</span>
+      <button class="hover:underline">Your Privacy Choices</button>
+      <div class="image-container pl-1">
+        <img class="h-4" src="assets/Your privacy choices.PNG" />
+      </div>
+    </div>
+    <div class="flex flex-row items-center space-x-5 text-gray-800">
+      <button class="shrink-0">
+        <mat-icon class="scale-75">language</mat-icon
+        ><span class="hover:underline">Español(US)</span>
+      </button>
+      <button class="shrink-0">
+        $ <span class="hover:underline">USD</span>
+      </button>
+      <button class="shrink-0">
+        <span class="hover:underline">Ayuda y recursos</span
+        ><mat-icon>keyboard_arrow_up</mat-icon>
+      </button>
     </div>
   </div>
-  <div class="flex flex-row items-center space-x-5 text-gray-800">
-    <button>
-      <mat-icon class="scale-75">language</mat-icon
-      ><span class="hover:underline">Español(US)</span>
-    </button>
-    <button>$ <span class="hover:underline">USD</span></button>
-    <button>
-      <span class="hover:underline">Ayuda y recursos</span
-      ><mat-icon>keyboard_arrow_up</mat-icon>
-    </button>
-  </div>
 </div>
-
 <div class="foot-printbar-placeholder h-foot-printbar"></div>
