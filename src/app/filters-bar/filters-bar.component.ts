@@ -1,3 +1,4 @@
+import { BreakpointObserver } from '@angular/cdk/layout';
 import { Component, OnInit } from '@angular/core';
 import { PrimeIcons, MenuItem } from 'primeng/api';
 import { ProductService } from '../product.service';
@@ -26,9 +27,14 @@ export class FiltersBarComponent {
 
   public selectedCategoryLabel: string = 'Islas';
 
+  public areNavigatorsVisible: boolean = false;
+
   public responsiveOptions;
 
-  constructor(private repo: RepositoryService) {
+  constructor(
+    private repo: RepositoryService,
+    private breakpointObserver: BreakpointObserver
+  ) {
     this.responsiveOptions = [
       {
         breakpoint: '1024px',
@@ -42,10 +48,21 @@ export class FiltersBarComponent {
       },
       {
         breakpoint: '560px',
-        numVisible: 4,
+        numVisible: 5,
         numScroll: 2,
       },
     ];
+
+    // register the handler for the breakpoint observer
+    this.breakpointObserver
+      .observe([`(max-width: ${'768px'})`])
+      .subscribe((res) => {
+        if (res.matches) {
+          this.areNavigatorsVisible = false;
+        } else {
+          this.areNavigatorsVisible = true;
+        }
+      });
 
     // load categories collection
     this.repo.getCategories().subscribe({
