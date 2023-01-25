@@ -95,6 +95,6 @@ export class FiltersBarComponent {
   }
 
   showDialog() {
-    this.IsFiltersDialogVisible = true;
+    this.applicationService.IsFilterDialogVisible = true;
   }
 }
