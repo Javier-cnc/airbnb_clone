@@ -31,9 +31,24 @@
     </ng-template>
   </p-carousel>
   <div class="hidden flex-col justify-center md:flex">
-    <button class="flex space-x-2 rounded-xl border border-gray-200 p-3">
+    <button
+      (click)="showDialog()"
+      class="flex space-x-2 rounded-xl border border-gray-200 p-3"
+    >
       <i class="pi pi-sliders-h"></i>
       <span class="text-xs">Filters</span>
     </button>
   </div>
+
+  <p-dialog
+    [draggable]="false"
+    [modal]="true"
+    position="bottom"
+    header="Title"
+    [(visible)]="IsFiltersDialogVisible"
+    [style]="{ width: '90vw', height: '100%' }"
+  >
+    <ng-template pTemplate="header"> Header content here </ng-template>
+    <div class="h-full bg-green-700"></div>
+  </p-dialog>
 </div>

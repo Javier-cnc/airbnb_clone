@@ -1,8 +1,9 @@
+import { ApplicationService } from './../../services/applicationService/application.service';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { Component, OnInit } from '@angular/core';
 import { PrimeIcons, MenuItem } from 'primeng/api';
-import { ProductService } from '../product.service';
-import { RepositoryService } from '../repository.service';
+import { ProductService } from '../../services/productService/product.service';
+import { RepositoryService } from '../../services/repositoryService/repository.service';
 
 export interface Product {
   id?: string;
@@ -29,9 +30,20 @@ export class FiltersBarComponent {
 
   public areNavigatorsVisible: boolean = false;
 
+  public get IsFiltersDialogVisible(): boolean {
+    return this.isFiltersDialogVisible;
+  }
+  public set IsFiltersDialogVisible(value: boolean) {
+    this.isFiltersDialogVisible = value;
+    this.applicationService.IsFilterDialogVisible = value;
+  }
+
+  private isFiltersDialogVisible: boolean = false;
+
   public responsiveOptions;
 
   constructor(
+    private applicationService: ApplicationService,
     private repo: RepositoryService,
     private breakpointObserver: BreakpointObserver
   ) {
@@ -73,5 +85,16 @@ export class FiltersBarComponent {
         // TODO: Output something to the console...
       },
     });
+
+    // subscribe to the filter dialog visibility state change notificator
+    this.applicationService.IsFilterDialogVisible_Notifier.subscribe({
+      next: (value) => {
+        this.IsFiltersDialogVisible = value;
+      },
+    });
+  }
+
+  showDialog() {
+    this.IsFiltersDialogVisible = true;
   }
 }

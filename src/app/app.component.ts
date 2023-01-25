@@ -1,5 +1,5 @@
+import { RepositoryService } from './services/repositoryService/repository.service';
 import { Component } from '@angular/core';
-import { RepositoryService } from './repository.service';
 
 @Component({
   selector: 'app-root',

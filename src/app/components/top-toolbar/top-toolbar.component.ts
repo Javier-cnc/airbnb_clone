@@ -1,3 +1,4 @@
+import { ApplicationService } from './../../services/applicationService/application.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -14,7 +15,7 @@ export class TopToolbarComponent implements OnInit {
 
   public svg_color: string = '';
 
-  constructor() {}
+  constructor(private applicationState: ApplicationService) {}
 
   ngOnInit(): void {
     // #region Define color of logo using css global variables
@@ -24,5 +25,9 @@ export class TopToolbarComponent implements OnInit {
     );
 
     // #endregion
+  }
+
+  showFilterDialog() {
+    this.applicationState.IsFilterDialogVisible = true;
   }
 }

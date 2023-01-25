@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ResolveStart } from '@angular/router';
-import { Product } from './filters-bar/filters-bar.component';
+import { Product } from '../../components/filters-bar/filters-bar.component';
 
 @Injectable({
   providedIn: 'root',

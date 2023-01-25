@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import House from '../models/house.model';
+import House from '../../models/house.model';
 
 @Component({
   selector: 'app-house-menu-caption',
